@@ -13,30 +13,41 @@ function twelveHourFormat(hourOfDay) {
 
 
 // textbox color changing depending on activities time. Past, present and future.
-// for const id is the id number of the parent div.
-$("textarea").each(function() {
-    const format = 'H';
-    const id = $(this).parent().attr('id');
-    
-    const timeblockHour = moment(id.replace(/\D/g, ''), format);
-    const currentHour = moment(now.format('H'), format);
 
-    if(currentHour.isBefore(timeblockHour)) {
-        $(this).addClass('future');
-    } else if(currentHour.isAfter(timeblockHour)) {
+$(".time-block").each(function() {
+    const format = 'H';
+    const id = $(this).attr('id');
+    
+    const timeblockHour = parseInt(id.split('-')[1]);
+    const currentHour = moment().hours();
+
+    if(timeblockHour < currentHour) {
         $(this).addClass('past');
-    } else {
+    } else if(timeblockHour === currentHour) {
+        $(this).removeClass('past');
         $(this).addClass('present');
+    } else {
+        $(this).removeClass('past')
+        $(this).removeClass('present')
+        $(this).addClass('future');
     }
 });
 
 // click event causes to store the value of texbox locally.
+$(".saveBtn").on('click', function(){
+    var activity = $(this).siblings(".description").val()
+    var time = $(this).parent().attr("id")
+    localStorage.setItem(time,activity)
+})
 
-buttonList.on('click', function() {
-    const textBox = $(this).prev();    
-    
-    const id = $(this).parent().attr('id');
-    localStorage.setItem(id, textBox.val());
-});
 
 // getting value from localStorage
+$('#time-9 .description').val(localStorage.getItem('time-9'));
+$('#time-10 .description').val(localStorage.getItem('time-10'));
+$('#time-11 .description').val(localStorage.getItem('time-11'));
+$('#time-12 .description').val(localStorage.getItem('time-12'));
+$('#time-13 .description').val(localStorage.getItem('time-13'));
+$('#time-14 .description').val(localStorage.getItem('time-14'));
+$('#time-15 .description').val(localStorage.getItem('time-15'));
+$('#time-16 .description').val(localStorage.getItem('time-16'));
+$('#time-17 .description').val(localStorage.getItem('time-17'));
