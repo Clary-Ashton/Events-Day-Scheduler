@@ -6,4 +6,6 @@ This a simple application that will help a user to store hourly activities on a 
 ## Screenshot
 ## License
 
+This application is licensed with a [MIT License]
+
 
