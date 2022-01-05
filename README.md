@@ -4,6 +4,8 @@ This a simple application that will help a user to store hourly activities on a 
 
 ## Deployed Link
 
+ https://clary-ashton.github.io/Events-Day-Scheduler/
+
 
 ## Screenshot
 
