@@ -11,7 +11,7 @@ This a simple application that will help a user to store hourly activities on a 
 
 ## Screenshot
 
-![image](https://user-images.githubusercontent.com/78886789/148139223-99fd98a7-b343-4b69-95a6-01b01c56de14.png)
+
 
 
 
