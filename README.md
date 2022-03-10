@@ -30,7 +30,7 @@ Bootstrap
 
 This application is licensed with an [MIT License](./LICENSE)
 
-Created by:
+## Created by:
 
 Clary Mawangi
 
